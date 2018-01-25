@@ -1,0 +1,26 @@
+﻿CREATE TABLE [data].[arenas] (
+    [arena_id]                  UNIQUEIDENTIFIER NOT NULL,
+    [alias_arena_id]            UNIQUEIDENTIFIER NULL,
+    [arena_name]                VARCHAR (255)    NOT NULL,
+    [arena_city]                VARCHAR (50)     NULL,
+    [arena_state]               VARCHAR (50)     NULL,
+    [arena_country]             VARCHAR (50)     NULL,
+    [arena_zip]                 VARCHAR (50)     NULL,
+    [arena_address]             VARCHAR (80)     NULL,
+    [arena_capacity]            INT              NULL,
+    [arena_longitude]           DECIMAL (18, 12) NULL,
+    [arena_latitude]            DECIMAL (18, 12) NULL,
+    [arena_timezone_utc_offset] INT              NULL,
+    [arena_surface]             VARCHAR (20)     NULL,
+    [arena_roof_type]           VARCHAR (20)     NULL,
+    [notes]                     VARCHAR (255)    NULL,
+    [arena_is_active]           BIT              DEFAULT ((1)) NOT NULL,
+    [arena_open_date]           DATE             NULL,
+    [arena_close_date]          DATE             NULL,
+    [created_by]                VARCHAR (40)     DEFAULT (suser_name()) NOT NULL,
+    [created_datetime]          DATETIME2 (7)    DEFAULT (sysdatetime()) NOT NULL,
+    [updated_by]                VARCHAR (40)     NULL,
+    [updated_datetime]          DATETIME2 (7)    NULL,
+    PRIMARY KEY CLUSTERED ([arena_id] ASC)
+);
+
